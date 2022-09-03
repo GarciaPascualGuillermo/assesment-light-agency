@@ -6,7 +6,6 @@ use assesment;
 create table clasificacion(
 	id_clasificacion int not null primary key auto_increment,
     nombre varchar(50),
-    clasificacion int,
     clase_hija int
 );
 
@@ -95,16 +94,16 @@ where producto.id_clasificacion = clasificacion.id_clasificacion
 order by  rand() limit 10;
 
 /*Datos de prueba*/
-insert into clasificacion (nombre, clasificacion, clase_hija) values ('Myrwyn', 1, 1);
-insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Adair', 2, 2);
-insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Frederico', 3, 3);
-insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Lois', 4, 4);
-insert into clasificacion ( nombre, clasificacion, clase_hija) values ('York', 5, 5);
-insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Gretel', 6, 6);
-insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Kathy', 7, 7);
-insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Danita', 8, 8);
-insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Nanni', 9, 9);
-insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Denver', 10, 10);
+insert into clasificacion (nombre, clase_hija) values ('Myrwyn', 1);
+insert into clasificacion ( nombre, clase_hija) values ( 'Adair', 2);
+insert into clasificacion ( nombre, clase_hija) values ( 'Frederico', 3);
+insert into clasificacion ( nombre, clase_hija) values ( 'Lois', 4);
+insert into clasificacion ( nombre, clase_hija) values ('York', 5);
+insert into clasificacion ( nombre, clase_hija) values ( 'Gretel', 6);
+insert into clasificacion ( nombre, clase_hija) values ( 'Kathy', 7);
+insert into clasificacion ( nombre, clase_hija) values ( 'Danita', 8);
+insert into clasificacion ( nombre, clase_hija) values ( 'Nanni', 9);
+insert into clasificacion ( nombre, clase_hija) values ( 'Denver', 10);
 
 
 insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('Accord', 'Orange', 14971, 6);
