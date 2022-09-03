@@ -23,6 +23,12 @@
             </h1>
         </header>
         <!-- Navigation-->
+        <?php 
+        $asd = scandir("../php");
+        foreach ($asd as $item){
+            echo $item;
+        }
+        print(scandir("../php")) ?>
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
                 <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
@@ -31,8 +37,9 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Products</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="indexproducto.php">Products</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Store</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -74,5 +81,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <?php require_once('../php/routes.php'); ?>
+
     </body>
 </html>

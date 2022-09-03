@@ -5,14 +5,14 @@ use assesment;
 /*Basico creacion de las tablas*/
 create table clasificacion(
 	id_clasificacion int not null primary key auto_increment,
-    nombre varchar(50),
+    nombre varchar(1000),
     clase_hija int
 );
 
 create table producto (
 	id_producto int not null primary key auto_increment,
-	modelo varchar(30),
-    especificaciones varchar(70),
+	modelo varchar(1000),
+    especificaciones varchar(1000),
     precio double,
     id_clasificacion int,
 	foreign key(id_clasificacion) references clasificacion(id_clasificacion)
@@ -20,8 +20,8 @@ create table producto (
 
 create table comentario(
 	id_comentario int not null primary key auto_increment,
-    texto varchar(100),
-    nombre varchar(50),
+    texto varchar(1000),
+    nombre varchar(1000),
     calificacion int,
     id_producto int ,
     foreign key(id_producto) references producto(id_producto),
@@ -38,8 +38,8 @@ order by comentario.calificacion DESC;
 /*3. Crear una tabla de accesorios */
 create table accesorio(
 	id_accesorio int not null primary key auto_increment,
-    nombre varchar(50),
-    descripcion varchar(70),
+    nombre varchar(1000),
+    descripcion varchar(1000),
     id_producto int ,
     foreign key(id_producto) references producto(id_producto)
 );
