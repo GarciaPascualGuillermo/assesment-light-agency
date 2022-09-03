@@ -7,6 +7,7 @@
 		<td>id_clasificacion</td>
 		<td colspan=2 >Acciones</td>
 	</tr>
+
 <?php
 	foreach ($producto as $producto) { ?>
 		

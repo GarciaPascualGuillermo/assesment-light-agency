@@ -8,5 +8,5 @@
 		$action='index';
 	}	
 	//carga la vista layout.php
-	require_once('../public_html/index.php');
+	require_once('layout.php');
 ?>
