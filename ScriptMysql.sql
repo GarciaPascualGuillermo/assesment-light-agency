@@ -4,14 +4,14 @@ use assesment;
 
 /*Basico creacion de las tablas*/
 create table clasificacion(
-	id_clasificacion int not null primary key,
+	id_clasificacion int not null primary key auto_increment,
     nombre varchar(50),
     clasificacion int,
-    clase_hija varchar(50)
+    clase_hija int
 );
 
 create table producto (
-	id_producto int not null primary key,
+	id_producto int not null primary key auto_increment,
 	modelo varchar(30),
     especificaciones varchar(70),
     precio double,
@@ -20,7 +20,7 @@ create table producto (
 );
 
 create table comentario(
-	id_comentario int not null primary key,
+	id_comentario int not null primary key auto_increment,
     texto varchar(100),
     nombre varchar(50),
     calificacion int,
@@ -38,7 +38,7 @@ order by comentario.calificacion DESC;
 /*2. Agrega indices, llaves foraneas y contrains, se agregaron en las tablas que se crearon anteriormente*/
 /*3. Crear una tabla de accesorios */
 create table accesorio(
-	id_accesorio int not null primary key,
+	id_accesorio int not null primary key auto_increment,
     nombre varchar(50),
     descripcion varchar(70),
     id_producto int not null,
@@ -50,7 +50,7 @@ alter table producto add column cantidad_vistas int;
 /*Avanzado*/
 /*1. Agrega tabla de meta informacion*/
 create table metainfo(
-	id_metainfo int not null,
+	id_metainfo int not null auto_increment,
     fecha_registro datetime,
     fecha_modificacion datetime,
     cantidad_vista int,
@@ -64,7 +64,7 @@ create table metainfo(
 DELIMITER //
 create trigger INSERTPRODUCT after insert on producto
 for each row begin
-	insert into metainfo (id_metainfo, fecha_registro, fecha_modificacion, cantidad_vista, cantidad_like, id_producto) values (1, current_timestamp(), current_timestamp(), 0, 0, new.id_producto);
+	insert into metainfo (fecha_registro, fecha_modificacion, cantidad_vista, cantidad_like, id_producto) values (current_timestamp(), current_timestamp(), 0, 0, new.id_producto);
 end//
 delimiter ;
 
@@ -95,36 +95,36 @@ where producto.id_clasificacion = clasificacion.id_clasificacion
 order by  rand() limit 10;
 
 /*Datos de prueba*/
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (1, 'Myrwyn', 1, 'Hewett');
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (2, 'Adair', 2, 'Hilary');
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (3, 'Frederico', 3, 'Andre');
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (4, 'Lois', 4, 'Giles');
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (5, 'York', 5, 'Rupert');
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (6, 'Gretel', 6, 'Ettore');
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (7, 'Kathy', 7, 'Ariel');
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (8, 'Danita', 8, 'Aluino');
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (9, 'Nanni', 9, 'Jessey');
-insert into clasificacion (id_clasificacion, nombre, clasificacion, clase_hija) values (10, 'Denver', 10, 'Nevile');
+insert into clasificacion (nombre, clasificacion, clase_hija) values ('Myrwyn', 1, 1);
+insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Adair', 2, 2);
+insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Frederico', 3, 3);
+insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Lois', 4, 4);
+insert into clasificacion ( nombre, clasificacion, clase_hija) values ('York', 5, 5);
+insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Gretel', 6, 6);
+insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Kathy', 7, 7);
+insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Danita', 8, 8);
+insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Nanni', 9, 9);
+insert into clasificacion ( nombre, clasificacion, clase_hija) values ( 'Denver', 10, 10);
 
 
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (1, 'Accord', 'Orange', 14971, 6);
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (2, 'Camry', 'Aquamarine', 12523, 7);
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (3, 'Cobalt', 'Aquamarine', 15813, 7);
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (4, 'Exige', 'Maroon', 11149, 10);
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (5, 'Genesis', 'Mauv', 12344, 1);
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (6, 'tC', 'Purple', 14092, 10);
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (7, 'GT', 'Crimson', 18597, 5);
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (8, 'M5', 'Pink', 10934, 6);
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (9, 'TundraMax', 'Goldenrod', 17951, 8);
-insert into producto (id_producto, modelo, especificaciones, precio, id_clasificacion) values (10, 'DB9', 'Mauv', 11391, 9);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('Accord', 'Orange', 14971, 6);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('Camry', 'Aquamarine', 12523, 7);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('Cobalt', 'Aquamarine', 15813, 7);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('Exige', 'Maroon', 11149, 10);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('Genesis', 'Mauv', 12344, 1);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('tC', 'Purple', 14092, 10);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('GT', 'Crimson', 18597, 5);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('M5', 'Pink', 10934, 6);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('TundraMax', 'Goldenrod', 17951, 8);
+insert into producto ( modelo, especificaciones, precio, id_clasificacion) values ('DB9', 'Mauv', 11391, 9);
 
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (1, 'Gendr identity dis-child', 'Giffard', 62, 8);
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (2, 'Mult gest 2+ monoamn NEC', 'Falito', 57, 8);
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (3, '60-69% bdy brn/3 deg NOS', 'Lyn', 96, 5);
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (4, 'Anaplastic lymph inguin', 'Caleb', 100, 8);
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (5, 'Blister trunk-infected', 'Devonne', 84, 9);
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (6, 'Old bucket tear med men', 'Georgianna', 82, 9);
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (7, 'Rheumatic heart failure', 'Morgan', 86, 6);
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (8, 'Exud cyst iris/ant chamb', 'Gabi', 70, 3);
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (9, 'Meth susc Staph carrier', 'Roana', 62, 6);
-insert into comentario (id_comentario, texto, nombre, calificacion, id_producto) values (10, 'One eye-mod/oth-nr norm', 'Kelsey', 94, 2);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( 'Gendr identity dis-child', 'Giffard', 62, 8);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( 'Mult gest 2+ monoamn NEC', 'Falito', 57, 8);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( '60-69% bdy brn/3 deg NOS', 'Lyn', 96, 5);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( 'Anaplastic lymph inguin', 'Caleb', 100, 8);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( 'Blister trunk-infected', 'Devonne', 84, 9);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( 'Old bucket tear med men', 'Georgianna', 82, 9);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( 'Rheumatic heart failure', 'Morgan', 86, 6);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( 'Exud cyst iris/ant chamb', 'Gabi', 70, 3);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( 'Meth susc Staph carrier', 'Roana', 62, 6);
+insert into comentario ( texto, nombre, calificacion, id_producto) values ( 'One eye-mod/oth-nr norm', 'Kelsey', 94, 2);
