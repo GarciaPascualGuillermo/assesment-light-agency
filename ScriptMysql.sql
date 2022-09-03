@@ -50,7 +50,7 @@ alter table producto add column cantidad_vistas int;
 /*Avanzado*/
 /*1. Agrega tabla de meta informacion*/
 create table metainfo(
-	id_metainfo int not null auto_increment,
+	id_metainfo int not null primary key auto_increment,
     fecha_registro datetime,
     fecha_modificacion datetime,
     cantidad_vista int,
