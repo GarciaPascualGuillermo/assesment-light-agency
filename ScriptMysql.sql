@@ -15,7 +15,7 @@ create table producto (
 	modelo varchar(30),
     especificaciones varchar(70),
     precio double,
-    id_clasificacion int not null,
+    id_clasificacion int,
 	foreign key(id_clasificacion) references clasificacion(id_clasificacion)
 );
 
@@ -24,7 +24,7 @@ create table comentario(
     texto varchar(100),
     nombre varchar(50),
     calificacion int,
-    id_producto int not null,
+    id_producto int ,
     foreign key(id_producto) references producto(id_producto),
     constraint ChkCalificacion check (calificacion>0 AND calificacion<=100)
 );
@@ -41,7 +41,7 @@ create table accesorio(
 	id_accesorio int not null primary key auto_increment,
     nombre varchar(50),
     descripcion varchar(70),
-    id_producto int not null,
+    id_producto int ,
     foreign key(id_producto) references producto(id_producto)
 );
  /*4.Agregando nueva columna a la tabla productos*/
@@ -55,7 +55,7 @@ create table metainfo(
     fecha_modificacion datetime,
     cantidad_vista int,
     cantidad_like int,    
-    id_producto int not null,
+    id_producto int,
     foreign key(id_producto) references producto(id_producto)
 );
 
