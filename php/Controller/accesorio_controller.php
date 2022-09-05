@@ -10,18 +10,16 @@
             public function index()
             {
                 $accesorio= Accesorio::all();
-               // require_once('indexproducto.php');
             }
 
             public function register()
             {
-               // require_once('registerproducto.php');
+
             }
 
             public function update($accesorio)
             {
                 Accesorio ::update($accesorio);
-                //header('Location: index.php');
             }
 
             public function delete($id_accesorio)

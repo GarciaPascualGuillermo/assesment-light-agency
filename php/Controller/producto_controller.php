@@ -7,6 +7,7 @@
 
             public function index()
             {
+                require(APP_ROOT."/assesment-light-agency/php/Models/clasificacion.php");
                 $producto= Producto::all(); 
                 $destacados= Producto::destacados();
                 $vendidos= Producto::vendidos(); 
@@ -21,6 +22,7 @@
 
             public function update($producto)
             {
+                require(APP_ROOT."/assesment-light-agency/php/Models/comentario.php");
                 Producto ::update($producto);
                 header('Location:'.APP_ROOT.'/assesment-light-agency/public_html/indexproducto.php');
             }
@@ -79,8 +81,9 @@
                 }elseif ($_GET['action'] == 'update'){
                     //Mostrar la vista update con los datos del registro actualizar
                     require('../Models/producto.php');
+                    require('../Models/comentario.php');
                     $producto= Producto::getById($_GET['id_producto']);
-                    $comentarios = Comentario::getById($_GET['id_producto']);
+                    $comentarios = Comentario::all($_GET['id_producto']);
                     //Vista de update
                     require_once('../../public_html/indexproduct.php');
                 }

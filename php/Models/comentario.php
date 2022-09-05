@@ -20,8 +20,8 @@ class Comentario
     {
         $listaComentario = [];
         $db = Db::getConnect();
-        $sql = $db -> query('SELECT * FROM comentario WHERE id_producto=:id_producto'  );
-
+        $sql = $db -> query('SELECT * FROM comentario WHERE id_producto='.$id_producto  );
+        
         //Carga en la $listaProducto cada registro de la bd
         foreach($sql -> fetchAll() as $comentario)
         {

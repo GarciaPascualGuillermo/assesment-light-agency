@@ -1,5 +1,6 @@
 <?php 
 require_once(__ROOT__.'\php\routes.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +42,6 @@ require_once(__ROOT__.'\php\routes.php');
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#About">Sobre Nosotros</a></li>
 						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#Destacados">Productos Destacados</a></li>
 						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#Vendidos">Productos Mas Vendidos</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="indexproducto.php">Productos</a></li>
 						<div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Categorias
@@ -97,7 +97,7 @@ require_once(__ROOT__.'\php\routes.php');
 							<div class="card-body">
 							<h4 class="card-title"><?php echo $destacados->modelo; ?></h4>
 							<p class="card-text"><?php echo $destacados->especificaciones;?></p>
-							<p class="card-text"><?php echo $destacados->precio;?> $</p>
+							<p class="card-text">$<?php echo $destacados->precio;?></p>
 							<a href="../php/Controller/producto_controller.php?action=update&id_producto=<?php echo $destacados -> id_producto?>"  class="btn btn-primary">Ver Producto</a>
                         </div>
 						</div>
@@ -115,7 +115,7 @@ require_once(__ROOT__.'\php\routes.php');
 							<div class="card-body">
 							<h4 class="card-title"><?php echo $vendidos->modelo; ?></h4>
 							<p class="card-text"><?php echo $vendidos->especificaciones;?></p>
-							<p class="card-text"><?php echo $vendidos->precio;?> $</p>
+							<p class="card-text">$<?php echo $vendidos->precio;?></p>
 							<a href="../php/Controller/producto_controller.php?action=update&id_producto=<?php echo $vendidos -> id_producto?>"  class="btn btn-primary">Ver Producto</a>
 							</div>
 						</div>

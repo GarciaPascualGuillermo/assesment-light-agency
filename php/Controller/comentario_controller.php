@@ -6,18 +6,16 @@
             public function index()
             {
                 $comentario= Comentario::all();
-               // require_once('indexproducto.php');
             }
 
             public function register()
             {
-               // require_once('registerproducto.php');
+
             }
 
             public function update($comentario)
             {
                 Comentario ::update($comentario);
-                //header('Location: index.php');
             }
 
             public function delete($id_comentario)

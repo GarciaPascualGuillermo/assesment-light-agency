@@ -13,7 +13,7 @@
 
             public function register()
             {
-                //require_once('registerproducto.php');
+                
             }
 
             public function update($clasificacion)
@@ -30,8 +30,7 @@
             }
 
             public function error(){
-                //Vista de error
-                //require_once('errorproducto.php');
+                
             }
         }
      if(isset($_POST['action']))

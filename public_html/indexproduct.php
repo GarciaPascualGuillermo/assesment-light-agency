@@ -43,7 +43,6 @@
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#About">Sobre Nosotros</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#Destacados">Productos Destacados</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#Vendidos">Productos Mas Vendidos</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="indexproducto.php">Productos</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Categorias</a></li>
 
                 </ul>
@@ -53,8 +52,8 @@
 
     <section class="page-section cta">
         <div class=" d-flex container justify-content-center">
-            <div class="card ">
-                <img src="../../public_html/assets/img/computadoras/laptop<?php echo rand(1,10)?>.png" class="card-img-top" alt="...">
+            <div class="card " style="width: 90%;">
+                <img src="../../public_html/assets/img/computadoras/laptop<?php echo rand(1, 10) ?>.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $producto->modelo; ?></h5>
                     <p class="card-text"><?php echo $producto->especificaciones; ?></p>
@@ -64,13 +63,22 @@
                     <button type="button" class="btn btn-dark card-link justify-content-end">Comprar</button>
                 </div>
             </div>
+            <div class="card" style="width: 70%;">
+            <?php
+            foreach ($comentarios as $comentarios) { ?>
+                <div class="card-header">
+                <?php echo $comentarios->especificaciones; ?>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p><?php echo $comentarios->modelo; ?></p>
+                        <footer class="blockquote-footer">Calificacion: <?php echo $comentarios->precio; ?> </footer>
+                    </blockquote>
+                </div>
+                <?php } ?>
+            </div>
         </div>
-        
     </section>
-
-
-
-
     <footer class="footer text-faded text-center py-5">
         <div class="container">
             <p class="m-0 small">Copyright &copy; Your Website 2022</p>
@@ -83,7 +91,8 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 
-
+    <? require_once(__ROOT__ . '\php\routes.php'); ?>
+    <? require_once(__ROOT__ . 'Master.php'); ?>
 </body>
 
 </html>
