@@ -3,11 +3,12 @@
 	//función que llama al controlador y su respectiva acción, que son pasados como parámetros
 	function call($controller, $action){
 		//importa el controlador desde la carpeta Controllers
-		require_once('Controller/' . $controller . '_controller.php');
+		define('__ROOT1__', dirname(dirname(__FILE__)));                      
+		require_once(__ROOT1__.'/php/Controller/' . $controller . '_controller.php');
 		//crea el controlador
 		switch($controller){
 			case 'producto':
-				require_once('Models/producto.php');
+				require_once(__ROOT__.'/php/Models/producto.php');
 				$controller= new ProductoController();
 				break; 
 			case 'comentario':
@@ -41,7 +42,7 @@
 			//llama  la función call y le pasa el controlador a llamar y la acción (método) que está dentro del controlador
 			call($controller, $action);
 		}else{
-			call($controller, 'error');
+		//	call($controller, 'error');
 		}
 	}else{// le pasa el nombre del controlador y la pagina de error
 		call($controller, 'error');

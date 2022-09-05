@@ -1,8 +1,12 @@
 <?php 
     class AccesorioController
         {
-            public function __construct(){}
-
+            
+            public function __construct(){
+                require_once('../Master.php');
+            }
+            
+            
             public function index()
             {
                 $accesorio= Accesorio::all();
@@ -27,10 +31,6 @@
                 header('Location: index.php');
             }
 
-            public function error(){
-                //Vista de error
-                require_once('errorproducto.php');
-            }
         }
      if(isset($_POST['action']))
         {

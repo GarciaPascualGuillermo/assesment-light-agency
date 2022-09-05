@@ -29,6 +29,35 @@ class Producto
         }
         return $listaProducto;
     }
+
+    public static function destacados()
+    {
+        $listaProducto = [];
+        $db = Db::getConnect();
+        $sql = $db -> query('SELECT DISTINCT  * FROM producto ORDER BY RAND() LIMIT 10');
+
+        //Carga en la $listaProducto cada registro de la bd
+        foreach($sql -> fetchAll() as $producto)
+        {
+            $listaProducto [] = new Producto($producto['id_producto'],$producto['modelo'], $producto['especificaciones'],$producto['precio'],$producto['id_clasificacion']);
+        }
+        return $listaProducto;
+    }
+
+
+    public static function vendidos()
+    {
+        $listaProducto = [];
+        $db = Db::getConnect();
+        $sql = $db -> query('SELECT * FROM producto ORDER BY RAND() LIMIT 10');
+
+        //Carga en la $listaProducto cada registro de la bd
+        foreach($sql -> fetchAll() as $producto)
+        {
+            $listaProducto [] = new Producto($producto['id_producto'],$producto['modelo'], $producto['especificaciones'],$producto['precio'],$producto['id_clasificacion']);
+        }
+        return $listaProducto;
+    }
     //Funcion para registrar un producto
     public static function save($producto)
     {

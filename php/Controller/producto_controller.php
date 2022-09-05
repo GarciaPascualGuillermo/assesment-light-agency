@@ -5,14 +5,15 @@
 
             public function index()
             {
-                $producto= Producto::all();
-                echo getcwd();
-                require_once('indexproducto.php');
+                $producto= Producto::all(); 
+                $destacados= Producto::destacados();
+                $vendidos= Producto::vendidos();            
+                require_once(APP_ROOT.'/assesment-light-agency/public_html/indexproducto.php');
             }
 
             public function register()
             {
-                require_once('registerproducto.php');
+                require_once(APP_ROOT.'/registerproducto.php');
             }
 
             public function update($producto)
@@ -23,15 +24,12 @@
 
             public function delete($id_producto)
             {
-                require_once('Models/producto.php');
+                require_once(APP_ROOT.'/Models/producto.php');
                 Producto::delete($id_producto);
                 header('Location: index.php');
             }
 
-            public function error(){
-                //Vista de error
-                require_once('errorproducto.php');
-            }
+            
         }
      if(isset($_POST['action']))
         {
