@@ -55,6 +55,7 @@ require_once(__ROOT__.'\php\routes.php');
 						</li>
 						</div>
 
+
                     </ul>
                 </div>
             </div>
@@ -97,8 +98,8 @@ require_once(__ROOT__.'\php\routes.php');
 							<h4 class="card-title"><?php echo $destacados->modelo; ?></h4>
 							<p class="card-text"><?php echo $destacados->especificaciones;?></p>
 							<p class="card-text"><?php echo $destacados->precio;?> $</p>
-							<a href="#" class="btn btn-primary">Ver Producto</a>
-							</div>
+							<a href="../php/Controller/producto_controller.php?action=update&id_producto=<?php echo $destacados -> id_producto?>"  class="btn btn-primary">Ver Producto</a>
+                        </div>
 						</div>
 						<?php } ?>
 						</div>
@@ -115,7 +116,7 @@ require_once(__ROOT__.'\php\routes.php');
 							<h4 class="card-title"><?php echo $vendidos->modelo; ?></h4>
 							<p class="card-text"><?php echo $vendidos->especificaciones;?></p>
 							<p class="card-text"><?php echo $vendidos->precio;?> $</p>
-							<a href="#" class="btn btn-primary">Ver Producto</a>
+							<a href="../php/Controller/producto_controller.php?action=update&id_producto=<?php echo $vendidos -> id_producto?>"  class="btn btn-primary">Ver Producto</a>
 							</div>
 						</div>
 						<?php } ?>
@@ -125,9 +126,6 @@ require_once(__ROOT__.'\php\routes.php');
             </div>
         </section>
 
-
-
-		
         <footer class="footer text-faded text-center py-5">
             <div class="container"><p class="m-0 small">Copyright &copy; LightAgency 2022</p></div>
 

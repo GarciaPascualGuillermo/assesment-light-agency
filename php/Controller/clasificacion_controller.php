@@ -5,8 +5,10 @@
 
             public function index()
             {
+
                 $clasificacion= Clasificacion::allPadre();
-                require_once(APP_ROOT.'/assesment-light-agency/public_html/indexCategorias.php');
+                require_once(APP_ROOT.'/assesment-light-agency/public_html/indexCategorias.php');              
+
             }
 
             public function register()
