@@ -85,6 +85,7 @@ require_once(__ROOT__.'\php\routes.php');
 							<div class="card-body">
 							<h4 class="card-title"><?php echo $destacados->modelo; ?></h4>
 							<p class="card-text"><?php echo $destacados->especificaciones;?></p>
+							<p class="card-text"><?php echo $destacados->precio;?> $</p>
 							<a href="#" class="btn btn-primary">Ver Producto</a>
 							</div>
 						</div>
@@ -102,6 +103,7 @@ require_once(__ROOT__.'\php\routes.php');
 							<div class="card-body">
 							<h4 class="card-title"><?php echo $vendidos->modelo; ?></h4>
 							<p class="card-text"><?php echo $vendidos->especificaciones;?></p>
+							<p class="card-text"><?php echo $vendidos->precio;?> $</p>
 							<a href="#" class="btn btn-primary">Ver Producto</a>
 							</div>
 						</div>
