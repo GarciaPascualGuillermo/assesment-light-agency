@@ -1,10 +1,8 @@
 <?php 
-    define('APP_ROOT', dirname(dirname(__FILE__)));
-
- require(APP_ROOT."/Models/clasificacion.php");
 
     class ProductoController
         {
+            
             public function __construct(){}
 
             public function index()
@@ -28,7 +26,7 @@
             }
 
             
-            public function getById($id_producto)
+            public function gsetById($id_producto)
             {
                 require_once('../Models/producto.php');
                 Producto ::getById($id_producto);
@@ -82,6 +80,7 @@
                     //Mostrar la vista update con los datos del registro actualizar
                     require('../Models/producto.php');
                     $producto= Producto::getById($_GET['id_producto']);
+                    $comentarios = Comentario::getById($_GET['id_producto']);
                     //Vista de update
                     require_once('../../public_html/indexproduct.php');
                 }

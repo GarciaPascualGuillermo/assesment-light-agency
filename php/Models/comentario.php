@@ -16,11 +16,11 @@ class Comentario
         $this -> id_producto = $id_producto;
     }
     //Funcion para obtener todos los comentarios
-    public static function all()
+    public static function all($id_producto)
     {
         $listaComentario = [];
         $db = Db::getConnect();
-        $sql = $db -> query('SELECT * FROM comentario');
+        $sql = $db -> query('SELECT * FROM comentario WHERE id_producto=:id_producto'  );
 
         //Carga en la $listaProducto cada registro de la bd
         foreach($sql -> fetchAll() as $comentario)

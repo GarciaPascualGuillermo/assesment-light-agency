@@ -1,3 +1,6 @@
+<?php 
+require_once(__ROOT__.'\php\routes.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,7 +93,7 @@
                                     <td><?php echo $clasifica->nombre; ?></td>
                                 </tr>
                             <?php } ?>
-                            
+
                         </table>
                         <p class="address mb-5">
                             <em>
