@@ -1,5 +1,8 @@
 <?php 
- require(APP_ROOT."/assesment-light-agency/php/Models/clasificacion.php");
+    define('APP_ROOT', dirname(dirname(__FILE__)));
+
+ require(APP_ROOT."/Models/clasificacion.php");
+
     class ProductoController
         {
             public function __construct(){}
