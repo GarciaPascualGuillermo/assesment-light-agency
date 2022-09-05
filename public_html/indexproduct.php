@@ -43,7 +43,7 @@
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#About">Sobre Nosotros</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#Destacados">Productos Destacados</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#Vendidos">Productos Mas Vendidos</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Categorias</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">Categorias</a></li>
 
                 </ul>
             </div>
