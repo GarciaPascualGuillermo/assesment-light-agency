@@ -9,7 +9,7 @@
                 $producto= Producto::all(); 
                 $destacados= Producto::destacados();
                 $vendidos= Producto::vendidos(); 
-                $clasificacionPadre= Clasificacion::all();
+                $clasificacionPadre= Clasificacion::allPadre();
                 require_once(APP_ROOT.'/assesment-light-agency/public_html/indexproducto.php');
             }
 
