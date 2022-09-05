@@ -1,5 +1,6 @@
 <?php 
 require_once(__ROOT__.'\php\routes.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

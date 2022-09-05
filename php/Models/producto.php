@@ -115,7 +115,7 @@ class Producto
         //Asignarlo al objeto producto
         $productoDb = $select -> fetch();
         $producto = new Producto($productoDb['id_producto'],$productoDb['modelo'], $productoDb['especificaciones'],$productoDb['precio'],$productoDb['id_clasificacion']);      
-        return $producto;
+        return $producto  ;
     }
 }
 

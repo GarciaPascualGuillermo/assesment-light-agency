@@ -83,7 +83,8 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 
-
+   <? require_once(__ROOT__.'\php\routes.php'); ?>
+   <? require_once(__ROOT__.'Master.php'); ?>
 </body>
 
 </html>
