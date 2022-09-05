@@ -8,19 +8,19 @@
 		//crea el controlador
 		switch($controller){
 			case 'producto':
-				require_once(__ROOT__.'/php/Models/producto.php');
+				require_once(__ROOT__.'/php/Models/producto.php');			
 				$controller= new ProductoController();
 				break; 
 			case 'comentario':
-				require_once('Models/comentario.php');
+				require_once(__ROOT__.'/php/Models/comentario.php');
 				$controller= new ComentarioController();
 				break;
 			case 'clasificacion':
-				require_once('Models/clasificacion.php');
+				require_once(__ROOT__.'/php/Models/clasificacion.php');
 				$controller= new ClasificacionController();
 				break; 
 			case 'accesorio':
-				require_once('Models/accesorio.php');
+				require_once(__ROOT__.'/php/Models/accesorio.php');
 				$controller= new AccesorioController();
 				break;  	
 		}

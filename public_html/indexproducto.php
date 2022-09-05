@@ -42,7 +42,18 @@ require_once(__ROOT__.'\php\routes.php');
 						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#Destacados">Productos Destacados</a></li>
 						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#Vendidos">Productos Mas Vendidos</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="indexproducto.php">Productos</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Categorias</a></li>
+						<div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Categorias
+						</button>
+						<ul class="dropdown-menu">
+							<?php
+							foreach ($clasificacionPadre as $clasificacionPadre) { ?>
+							<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#" style="color:black;"><?php echo $clasificacionPadre->nombre ?> </a></li>
+							<?php } ?>
+						</ul>
+						</li>
+						</div>
 
                     </ul>
                 </div>
@@ -118,31 +129,9 @@ require_once(__ROOT__.'\php\routes.php');
 
 		
         <footer class="footer text-faded text-center py-5">
-            <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2022</p></div>
+            <div class="container"><p class="m-0 small">Copyright &copy; LightAgency 2022</p></div>
 
-            <table border='1'>
-
-	<h1> PRODUCTOS</h1>
-	<tr>
-		<td>Id_producto</td>
-		<td>modelo</td>
-		<td>especificaciones</td>
-		<td>precio</td>
-		<td>id_clasificacion</td>
-		<td colspan=2 >Acciones</td>
-	</tr>
-<?php
-	foreach ($producto as $producto) { ?>
-		
-			<tr>
-				<td><?php echo $producto->id_producto; ?></td>
-				<td><?php echo $producto->modelo; ?></td>
-				<td><?php echo $producto->especificaciones;?></td>
-				<td><?php echo $producto->precio;?></td>
-				<td><?php echo $producto->id_clasificacion;?></td>
-			</tr>		
-	<?php } ?>
-</table>
+          
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

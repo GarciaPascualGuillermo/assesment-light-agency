@@ -11489,3 +11489,42 @@ p {
 .address strong {
   font-size: 1.2rem;
 }
+
+#menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #377ADE;
+  float: left;
+}
+
+#menu li {
+  display: inline-block;
+  position: relative;
+}
+
+#menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 15px;
+  text-decoration: none;
+}
+
+#menu li:hover a{
+  background-color: #FF0049;
+  text-decoration: underline;
+}
+
+#menu ul {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  width:400px;
+}
+
+#menu li:hover ul {
+  display: block;
+}

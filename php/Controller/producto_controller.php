@@ -1,4 +1,5 @@
 <?php 
+ require(APP_ROOT."/assesment-light-agency/php/Models/clasificacion.php");
     class ProductoController
         {
             public function __construct(){}
@@ -7,7 +8,8 @@
             {
                 $producto= Producto::all(); 
                 $destacados= Producto::destacados();
-                $vendidos= Producto::vendidos();            
+                $vendidos= Producto::vendidos(); 
+                $clasificacionPadre= Clasificacion::all();
                 require_once(APP_ROOT.'/assesment-light-agency/public_html/indexproducto.php');
             }
 

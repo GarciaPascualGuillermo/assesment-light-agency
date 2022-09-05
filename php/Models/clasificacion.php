@@ -25,6 +25,20 @@ class Clasificacion
         }
         return $listaClasificacion;
     }
+
+    public static function allPadre()
+    {
+        $listaClasificacion = [];
+        $db = Db::getConnect();
+        $sql = $db -> query('SELECT * FROM clasificacion where clase_hija is null');
+
+        //Carga en la $listaClasificacion cada registro de la bd
+        foreach($sql -> fetchAll() as $clasificacion)
+        {
+            $listaClasificacion [] = new Clasificacion($clasificacion['id_clasificacion'],$clasificacion['nombre'], $clasificacion['clase_hija']);
+        }
+        return $listaClasificacion;
+    }
     //Funcion para registrar una clasificacion
     public static function save($clasificacion)
     {

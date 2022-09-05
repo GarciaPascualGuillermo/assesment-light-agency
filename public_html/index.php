@@ -8,7 +8,7 @@ require_once(APP_ROOT.'/assesment-light-agency/php/connection.php');
 	} else {
 		$controller='producto';
 		$action='index';
-	}	
+	}		
 	//carga la vista layout.php
 
 	require_once('layout.php');
