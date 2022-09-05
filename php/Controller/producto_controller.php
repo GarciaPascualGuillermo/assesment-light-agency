@@ -19,7 +19,15 @@
             public function update($producto)
             {
                 Producto ::update($producto);
-                header('Location: index.php');
+                header('Location:'.APP_ROOT.'/assesment-light-agency/public_html/indexproducto.php');
+            }
+
+            
+            public function getById($id_producto)
+            {
+                require_once('../Models/producto.php');
+                Producto ::getById($id_producto);
+                header('Location:'.APP_ROOT.'/assesment-light-agency/public_html/indexproduct.php');
             }
 
             public function delete($id_producto)
@@ -45,6 +53,7 @@
                 $producto = new Producto($_POST['modelo'], $_POST['especificaciones'], $_POST['precio'], $_POST['id_clasificacion']);
                 $productoController -> save($producto);
             }
+
             elseif($_POST['action'] == 'update')
             {
                 $producto = new Producto($_POST['id_producto'], $_POST['modelo'], $_POST['especificaciones'], $_POST['precio']);
@@ -58,7 +67,7 @@
             if ($_GET['action']!= 'register' & $_GET['action']!= 'index')
             {
                 //Archivo de conexion
-                require_once('connection.php');
+                require_once('../connection.php');
                 $productoController =  new ProductoController();
                 //Para eliminar
                 if ($_GET['action'] == 'delete')
@@ -66,10 +75,10 @@
                     $productoController -> delete($_GET['id_producto']);       
                 }elseif ($_GET['action'] == 'update'){
                     //Mostrar la vista update con los datos del registro actualizar
-                    require('Models/producto.php');
+                    require('../Models/producto.php');
                     $producto= Producto::getById($_GET['id_producto']);
                     //Vista de update
-                    require_once('updateproducto.php');
+                    require_once('../../public_html/indexproduct.php');
                 }
             }
         }

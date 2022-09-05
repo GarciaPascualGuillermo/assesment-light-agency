@@ -6,7 +6,7 @@
             public function index()
             {
                 $clasificacion= Clasificacion::all();
-                //require_once('indexproducto.php');
+                require_once(APP_ROOT.'/assesment-light-agency/public_html/store.php');
             }
 
             public function register()
